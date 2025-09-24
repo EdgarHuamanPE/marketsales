@@ -1,0 +1,16 @@
+services:
+  postgres:
+    container_name: postgreslast_db
+    image: postgres:latest
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: codigo
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: market_db
+    volumes:
+      - monefy_data:/var/lib/postgresql/data
+
+volumes:
+  monefy_data:
